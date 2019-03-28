@@ -16,11 +16,8 @@ def search(blocks, s):
         for x, y in move:
             x += block[0]
             y += block[1]
-            for i, j in blocks:
-                if i == x and j == y:
-                    break
-            else:
-                if not (i == x and j == y) and 0 <= x < N and 0 <= y < M: res = max(search(blocks + [(x, y)], s + paper[x][y]), res)
+            if not (i,j) in blocks and 0 <= x < N and 0 <= y < M:
+                res = max(search(blocks + [(x, y)], s + paper[x][y]), res)
     return res
 
 ans = 0
