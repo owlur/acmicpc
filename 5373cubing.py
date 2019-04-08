@@ -16,15 +16,15 @@ def turn_m():
 
 def look(direction):
     global U, D, F, B, L, R
-    if direction=='L':
+    if direction == 'L':
         U, D, F, B, L, R = turn_90(L), turn_90(R), turn_90(F), turn_90(B), turn_90(D), turn_90(U)
-    elif direction=='R':
+    elif direction == 'R':
         U, D, F, B, L, R = turn__90(R), turn__90(L), turn__90(F), turn__90(B), turn__90(U), turn__90(D)
-    elif direction=='F':
+    elif direction == 'F':
         U, D, F, B, L, R = F, B[::-1], D, U[::-1], turn__90(L), turn_90(R)
-    elif direction=='B':
+    elif direction == 'B':
         F, B, D, U, L, R = U, D[::-1], F, B[::-1], turn_90(L), turn__90(R)
-    elif direction=='D':
+    elif direction == 'D':
         U, D, F, B, L, R = D, U, B[::-1], F[::-1], turn_90(turn_90(L)), turn_90(turn_90(R))
 
 ret = {'L': 'R', 'R': 'L', 'F': 'B', 'B': 'F', 'D': 'D', 'U': 'U'}
@@ -42,7 +42,6 @@ for _ in range(int(input())):
     # B = [['B1','B2','B3'], ['B4','B5','B6'], ['B7','B8','B9']]
     # L = [['L1','L2','L3'], ['L4','L5','L6'], ['L7','L8','L9']]
     # R = [['R1','R2','R3'], ['R4','R5','R6'], ['R7','R8','R9']]
-
 
     n = int(input())
     cmd = input().split()
