@@ -43,5 +43,4 @@ while True:
     if eaten_num == size:
         eaten_num = 0
         size += 1
-
 print(t)
