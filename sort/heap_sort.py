@@ -2,14 +2,11 @@
 
 def heapify(l, node):
     n = len(l) - 1
-    if l[2*node] > l[node]:
-        l[node], l[2*node] = l[2 * node], l[node]
-        if 2*node <= n // 2:
-            heapify(l, 2*node)
-    if 2*node + 1 <= n and l[2*node + 1] > l[node]:
-        l[node], l[2*node+1] = l[2*node+1], l[node]
-        if 2*node + 1 <= n // 2:
-            heapify(l, 2*node+1)
+    for children in ((2*node), (2*node+1)):
+        if children <= n and l[children] > l[node]:
+            l[node], l[children] = l[children], l[node]
+            if children <= n//2:
+                heapify(l, children)
 
 def heap_sort(l):
     l = [0] + l
