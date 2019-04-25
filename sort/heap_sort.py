@@ -1,5 +1,4 @@
 # max heap
-
 def heapify(l, node):
     n = len(l) - 1
     for children in ((2*node), (2*node+1)):
